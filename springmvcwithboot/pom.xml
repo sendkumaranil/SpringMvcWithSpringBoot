@@ -39,6 +39,7 @@
 		<artifactId>bootstrap</artifactId>
 		<version>3.3.7</version>
 	</dependency>
+	
   </dependencies>
   <build>
     <finalName>commutebyflight</finalName>
