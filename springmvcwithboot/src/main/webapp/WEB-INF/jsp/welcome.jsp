@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style>
 .jumbotron { 
    	background-color:  #800080; 
@@ -87,6 +89,7 @@ hr{
     color: #f4511e;
     font-size: 200px;
 }
+
 </style>
 </head>
 <body>
@@ -105,8 +108,7 @@ hr{
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>        
-        <li><a href="#contact">CONTACT</a></li>
-        <li><a onclick="document.getElementById('idRegister').style.display='block'" id="register">REGISTER</a></li>
+        <li><a href="#contact">CONTACT</a></li>        
         <li><a onclick="document.getElementById('idLogin').style.display='block'" id="login">LOGIN</a></li>
         <li><a onclick="signOut();" id="signout">SIGN OUT</a></li>      
       </ul>
@@ -130,20 +132,20 @@ hr{
       <div class="w3-row-padding" style="margin:0 -16px;">
         <div class="w3-half">
           <label>From</label>
-          <input class="w3-input w3-border" type="text" placeholder="Departing from">
+          <input class="w3-input w3-border" id="IdSource" type="text" placeholder="Departing from" required>
         </div>
         <div class="w3-half">
           <label>To</label>
-          <input class="w3-input w3-border" type="text" placeholder="Arriving at">
+          <input class="w3-input w3-border" id="IdDestination" type="text" placeholder="Arriving at" required>
         </div>
         <div class="w3-half">
           <label>Travel Date</label>          
-          <input class="w3-input w3-border" type="date" placeholder="dd-mm-yyyy">
+          <input class="w3-input w3-border" id="IdTravelDate" type="date" placeholder="dd-mm-yyyy" required>
         </div>
       </div>
       <p>&nbsp;</p>
       <p>
-      	<button type="button" class="btn btn-default btn-sm">
+      	<button type="button" class="btn btn-default btn-sm" onclick="searchFlight();">
           <span class="glyphicon glyphicon-search"></span> Search 
         </button>
        </p>
@@ -258,6 +260,7 @@ marker.setMap(map);
      <div class="g-signin2" data-onsuccess="onSignIn"></div>
      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button onclick="document.getElementById('idLogin').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        <button onclick="registerNewUser();" type="button" class="w3-button w3-blue">Register</button>
         <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#" onclick="resetPassword();">password?</a></span>
       </div>
 </div>
@@ -307,7 +310,6 @@ marker.setMap(map);
       	</footer>
 	</div>
 </div>
-
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
 document.getElementById('signout').style.display='none';
@@ -319,6 +321,9 @@ function onSignIn(googleUser) {
 	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	  document.getElementById('idLogin').style.display='none';
 	  document.getElementById("login").text=profile.getName();
+	  document.getElementById("login").onclick = function() {
+		   //do nothing;
+	  }
 	  document.getElementById('signout').style.display='block';
 	}
 function signOut() {
@@ -328,11 +333,57 @@ function signOut() {
     });
     document.getElementById("login").text='LOGIN';
     document.getElementById('signout').style.display='none';
+    document.getElementById("login").onclick = function() {
+    	document.getElementById('idLogin').style.display='block';
+	}
   }
  function resetPassword(){
 	 document.getElementById('idLogin').style.display='none';
 	 document.getElementById('idForgotPassword').style.display='block';	 
  }
+ function registerNewUser(){
+	 document.getElementById('idRegister').style.display='block';
+	 document.getElementById('idLogin').style.display='none';
+ }
+ function searchFlight(){
+	var from=document.getElementById('IdSource').value;
+	var to=document.getElementById('IdDestination').value;
+	var tDate=document.getElementById('IdTravelDate').value;
+	if(from==''){
+		alert('From field is empty');
+		return;
+	}
+	if(to==''){
+		alert('To field is empty');
+		return;
+	}
+	if(tDate==''){
+		alert('Travel Date field is empty');
+		return;
+	}
+	
+	var date = new Date($('#IdTravelDate').val());
+    day = date.getDate();
+    month = date.getMonth() + 1;
+    year = date.getFullYear();
+    traveldate=[day, month, year].join('-');
+    
+	console.log('From: ' + from);
+	console.log('To: ' + to);
+	console.log('Travle On: ' + traveldate);
+ }
+ 
+ $( function() {
+	 var sources = ["Delhi","Bangalore","Mumbai","Pune","Hydrabad","Patna","Bhubneshwar","Bhopal"];
+	    $( "#IdSource" ).autocomplete({
+	      source: sources
+	    });
+	 var destinations = ["Delhi","Bangalore","Mumbai","Pune","Hydrabad","Patna","Bhubneshwar","Bhopal"];
+	 $( "#IdDestination" ).autocomplete({
+	      source: destinations
+	    });
+	  } );
+ 
 </script>
 </body>
 
