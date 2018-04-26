@@ -3,105 +3,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
-	
-	<%-- <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<c:url value="/css/main.css" var="jstlCss" />
-	<link href="${jstlCss}" rel="stylesheet" /> --%>
 <title>Commute By Flight</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="48687171789-b0j9ecudfmmefng9bs4sbqkj39bdvc8t.apps.googleusercontent.com">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Akronim'>
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Alex Brush'>
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Aladin'>
+<link rel="stylesheet" href='css/commutebyflight.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
-<style>
-.jumbotron { 
-   	background-color:  #800080; 
-   	color: #ffffff;
-   	font-family: Impact, Charcoal, sans-serif;
-}
-.carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #f4511e;
-}
-.carousel-indicators li {
-    border-color: #f4511e;
-}
-.carousel-indicators li.active {
-    background-color: #f4511e;
-}
-.item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
-}
-.item span {
-    font-style: normal;
-}
-hr{
-	height: 10px;
-	width:80%;
-	border: 0;
-	margin-left: auto;
-	margin-right: auto;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-.navbar {
-    margin-bottom: 0;
-    background-color: #f4511e;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
-
-.navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
-    background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-.logo-small {
-    color: #f4511e;
-    font-size: 50px;
-}
-.logo-medium {
-    color: #f4511e;
-    font-size: 100px;
-}
-.logo {
-    color: #f4511e;
-    font-size: 200px;
-}
-.acronim-font{
-font-family: 'Akronim';font-size: 22px;
-}
-.augufina-font{
-	font-family: 'Alex Brush';font-size: 22px;
-}
-.aladin-font{
-font-family: 'Aladin';font-size: 22px;
-}
-</style>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
