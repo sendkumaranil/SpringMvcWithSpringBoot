@@ -19,6 +19,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
 <style>
 .jumbotron { 
    	background-color:  #800080; 
@@ -89,7 +92,15 @@ hr{
     color: #f4511e;
     font-size: 200px;
 }
-
+.acronim-font{
+font-family: 'Akronim';font-size: 22px;
+}
+.augufina-font{
+	font-family: 'Alex Brush';font-size: 22px;
+}
+.aladin-font{
+font-family: 'Aladin';font-size: 22px;
+}
 </style>
 </head>
 <body>
@@ -100,10 +111,10 @@ hr{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">
-      <img src="moryalogo.jpg" alt="commutebyflight" style="width:25%" class="w3-circle" style="margin-top">
-      </a>
+      </button>      
+       <div class="w3-padding w3-left-align acronim-font w3-text-white">CommuteByFlight
+    		<i class="fa fa-plane"></i>   
+  	   </div>     
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -116,8 +127,8 @@ hr{
   </div>
 </nav>
 <div class="jumbotron text-center">
-  <h1>Commute By Flight</h1> 
-  <p>Search your flight and feel better travel experience</p> 
+  <h1 class="acronim-font">Commute By Flight</h1> 
+  <p class="aladin-font">Search your flight and feel better travel experience</p> 
 </div>
 <br><br><br>
 <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
@@ -145,16 +156,20 @@ hr{
       </div>
       <p>&nbsp;</p>
       <p>
-      	<button type="button" class="btn btn-default btn-sm" onclick="searchFlight();">
+      	<button type="button" id="IdSearchbtn" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-search"></span> Search 
         </button>
-       </p>
+        </p>
+         <div id="alertMessageId" class="alert alert-danger alert-dismissible">
+    		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    		<strong>Stop!</strong><span id="fromBlankMsgId"></span> 
+  		</div>       
     </div>
 </div>
 </header>
 <br><br><br><br><br><br><br><br>
 <div class="container-fluid text-center bg-grey">
-<h2>What our customers say</h2>
+<h2 class="aladin-font">What our customers say</h2>
 <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
  <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -164,13 +179,13 @@ hr{
     </ol>
     <div class="carousel-inner" role="listbox">
     	<div class="item active">
-        	<h4>"This company is the best. I am so happy with the result!"<br><span>Smith Roe, Vice President, ABC Pvt. Ltd.</span></h4>
+        	<h4 class="aladin-font">"This company is the best. I am so happy with the result!"<br><span>Smith Roe, Vice President, ABC Pvt. Ltd.</span></h4>
       	</div>
       	<div class="item">
-        	<h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        	<h4 class="aladin-font">"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
       	</div>
       	<div class="item">
-        	<h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        	<h4 class="aladin-font">"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
       	</div>
       	 <!-- Left and right controls -->
 	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -185,36 +200,58 @@ hr{
 </div>
 </div>
 <br>
-<hr>
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
+<div id="contact" class="container-fluid bg-gray">
   <div class="row">
     <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Benguluru, India</p>
-      <p><span class="glyphicon glyphicon-phone"></span>1800 00 1400</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> anil.verma4283@outlook.com</p> 
+      <div class="w3-card-4" style="width:70%;">
+	    <header class="w3-container w3-gray">
+	      <h4 class="aladin-font">Contact us and we'll get back to you within 24 hours.</h4>
+	    </header>
+	    <div class="w3-container">
+	      <p class="aladin-font"></p>
+	      <p class="aladin-font"><span class="glyphicon glyphicon-map-marker"></span> Bengluru, India</p>
+	      <p class="aladin-font"><span class="glyphicon glyphicon-phone"></span>1800 00 1400</p>
+	      <p class="aladin-font"><span class="glyphicon glyphicon-envelope"></span> anil.verma4283@outlook.com</p> 
+	    </div>
+	    <footer class="w3-container w3-gray">
+	      <h6 class="augufina-font">&copy; commutebyflight</h6>
+	    </footer>
+  	</div>
     </div>
     <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
+	    <div class="w3-card-4">
+	    <div class="w3-container w3-gray">
+	      	<ul class="w3-ul text-center">
+				<li class="w3-xxlarge aladin-font w3-left-align"><i class="glyphicon glyphicon-user"></i> Contact</li>
+			</ul>  
+	    </div>
+	
+	    <form class="w3-container">
+	      
+			<p> <div class="input-group">
+			  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>        
+			  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+			</div></p>	      
+	      <p> <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> 
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div> 
+        </div></p>		
+		<p><div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span> 
+          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+        </div></p>		
+		<p><div class="input-group">
+         <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-send"></span> Send 
+        </button>
+        </div></p>		
+	    </form>
+	  </div>
     </div>
   </div>
 </div>
 <br>
-<!-- Add Google Maps -->
+<!-- Add Google Maps Start-->
 <div id="googleMap" style="height:400px;width:100%;"></div>
 <script>
 function myMap() {
@@ -226,21 +263,22 @@ marker.setMap(map);
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKeMc5Vsq9nnjwmaraEFUPChqWIZMc0dU&callback=myMap"></script>
+<!-- Add Google Maps End-->
 
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About</h2>
-      <h4>Commute By Flight</h4> 
-      <p>The Commute By Flight provides better your travel jouney by flight across India.</p>
-      <button class="btn btn-default btn-lg">Get in Touch</button>
+      <h2 class="aladin-font">About</h2>
+      <h4 class="aladin-font">Commute By Flight</h4> 
+      <p class="aladin-font">The Commute By Flight provides better your travel journey by flight across India.</p>
+      <button class="w3-button w3-black w3-round-xlarge" id="IdGetInTouchBtn">Get In Touch</button>
     </div>    
     <div class="col-sm-4">
       <img src="moryalogo.jpg" alt="commutebyflight"  class="logo-medium">
     </div>
   </div>
 </div>
-<!-- Login Modal -->
+<!-- Login Modal Start-->
 <div id="idLogin" class="w3-modal">
 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:400px">
 	<div class="w3-center"><br>
@@ -260,12 +298,13 @@ marker.setMap(map);
      <div class="g-signin2" data-onsuccess="onSignIn"></div>
      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button onclick="document.getElementById('idLogin').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-        <button onclick="registerNewUser();" type="button" class="w3-button w3-blue">Register</button>
+        <button onclick="registerNewUser();" type="button" class="w3-button w3-blue">Sign Up</button>
         <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#" onclick="resetPassword();">password?</a></span>
       </div>
 </div>
 </div>
-<!-- Register Modal -->
+<!-- Login Modal End-->
+<!-- Register Modal Start-->
 <div id="idRegister" class="w3-modal">
 	<div class="w3-modal-content w3-animate-zoom" style="max-width:500px">
 		<header class="w3-container w3-teal"> 
@@ -289,8 +328,8 @@ marker.setMap(map);
       	</footer>
 	</div>
 </div>
+<!-- Register Modal End-->
 <!-- Forgot Password Modal -->
-<!-- Register Modal -->
 <div id="idForgotPassword" class="w3-modal">
 	<div class="w3-modal-content w3-animate-zoom" style="max-width:400px">
 		<header class="w3-container w3-teal"> 
@@ -310,6 +349,28 @@ marker.setMap(map);
       	</footer>
 	</div>
 </div>
+<!-- Forgot Password Modal End-->
+<!-- Get In Touch Modal -->
+<div id="idGetInTouchModal" class="w3-modal">
+	<div class="w3-modal-content w3-animate-zoom" style="max-width:400px">
+		<header class="w3-container w3-teal"> 
+		        <span onclick="document.getElementById('idGetInTouchModal').style.display='none'" 
+		        class="w3-button w3-display-topright">&times;</span>
+		        <h3>Get In Touch</h3>
+		</header>
+		<form class="w3-container" action="/action_page.php">
+	     	<div class="w3-section">
+	          <label><b>Email</b></label>
+	          <input class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Enter Email Id" name="email" required>	          
+	          <button class="w3-button w3-block w3-red w3-section w3-padding" type="submit">Subscribe</button>          
+	        </div>
+     	</form>     	
+     	<footer class="w3-container w3-teal">
+        	<p>We will send you latest offer and flight details</p>
+      	</footer>
+	</div>
+</div>
+<!-- Get In Touch Modal End-->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
 document.getElementById('signout').style.display='none';
@@ -345,33 +406,43 @@ function signOut() {
 	 document.getElementById('idRegister').style.display='block';
 	 document.getElementById('idLogin').style.display='none';
  }
- function searchFlight(){
-	var from=document.getElementById('IdSource').value;
-	var to=document.getElementById('IdDestination').value;
-	var tDate=document.getElementById('IdTravelDate').value;
-	if(from==''){
-		alert('From field is empty');
-		return;
-	}
-	if(to==''){
-		alert('To field is empty');
-		return;
-	}
-	if(tDate==''){
-		alert('Travel Date field is empty');
-		return;
-	}
-	
-	var date = new Date($('#IdTravelDate').val());
-    day = date.getDate();
-    month = date.getMonth() + 1;
-    year = date.getFullYear();
-    traveldate=[day, month, year].join('-');
-    
-	console.log('From: ' + from);
-	console.log('To: ' + to);
-	console.log('Travle On: ' + traveldate);
- }
+ 
+ $("#IdSearchbtn").click(function(){
+	 
+	    var from=document.getElementById('IdSource').value;
+		var to=document.getElementById('IdDestination').value;
+		var tDate=document.getElementById('IdTravelDate').value;
+		if(from==''){
+			$("#fromBlankMsgId").text(" From field is mandatory");
+			$("#alertMessageId").show();
+			return;
+		}
+		if(to==''){
+			$("#fromBlankMsgId").text(" To field is mandatory");
+			$("#alertMessageId").show();
+			return;
+		}
+		if(tDate==''){
+			$("#fromBlankMsgId").text(" Travel Date field is mandatory");
+			$("#alertMessageId").show();
+			return;
+		}
+		
+		var date = new Date($('#IdTravelDate').val());
+	    day = date.getDate();
+	    month = date.getMonth() + 1;
+	    year = date.getFullYear();
+	    traveldate=[day, month, year].join('-');
+	    
+		console.log('From: ' + from);
+		console.log('To: ' + to);
+		console.log('Travle On: ' + traveldate);
+			
+ });
+ 
+ $("#IdGetInTouchBtn").click(function(){
+	 document.getElementById('idGetInTouchModal').style.display='block';	
+ });
  
  $( function() {
 	 var sources = ["Delhi","Bangalore","Mumbai","Pune","Hydrabad","Patna","Bhubneshwar","Bhopal"];
@@ -384,6 +455,16 @@ function signOut() {
 	    });
 	  } );
  
+ $("#IdSource").focus(function(){
+	 $("#alertMessageId").hide();	 
+ });
+ $("#IdDestination").focus(function(){
+	 $("#alertMessageId").hide();	 
+ });
+ $("#IdTravelDate").focus(function(){
+	 $("#alertMessageId").hide();	 
+ });
+ $("#alertMessageId").hide();
 </script>
 </body>
 
